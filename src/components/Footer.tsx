@@ -12,7 +12,7 @@ export default function Footer() {
                 src="/ice_logo_white.png"
                 alt="Logo"
                 className="w-40 h-20 object-contain"
-              />
+              /> 
             </a>
             </div>
             <p className="text-gray-400 text-sm">
