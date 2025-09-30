@@ -7,13 +7,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">ICE</span>
-              </div>
-              <div>
-                <div className="font-bold text-lg">INDUSTRIAL</div>
-                <div className="text-xs text-gray-400">COMPUTING ENGINEERING</div>
-              </div>
+            <a href="#home">
+              <img
+                src="/ice_logo_white.png"
+                alt="Logo"
+                className="w-40 h-20 object-contain"
+              />
+            </a>
             </div>
             <p className="text-gray-400 text-sm">
               Leading in African-owned innovation by delivering excellence in IT,
