@@ -46,9 +46,19 @@ export default function Chatbot() {
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-red-600 text-white p-4 rounded-full shadow-2xl hover:bg-red-700 transition-colors relative"
+          className="rounded-full shadow-2xl transition-colors relative"
         >
-          {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
+          {isOpen ? (
+            <div className="bg-red-600 p-3 rounded-full hover:bg-red-700 transition-colors">
+              <X size={28} className="text-white" />
+            </div>
+          ) : (
+            <img
+              src="/R5.png"
+              alt="ICE Assistant Robot"
+              className="w-14 h-14 object-contain"
+            />
+          )}
           <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse" />
         </button>
       </div>
@@ -57,9 +67,11 @@ export default function Chatbot() {
         <div className="fixed right-8 bottom-28 z-50 w-80 md:w-96 bg-white rounded-lg shadow-2xl border-2 border-red-600 animate-slide-up">
           <div className="bg-red-600 text-white p-4 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
-                <span className="text-red-600 font-bold">ICE</span>
-              </div>
+              <img 
+                src="/ice.png" 
+                alt="ICE Assistant Robot" 
+                className="w-10 h-10 rounded-full mr-3 object-cover bg-white"
+              />
               <div>
                 <h3 className="font-bold">ICE Assistant</h3>
                 <p className="text-xs text-red-100">Always here to help</p>
@@ -73,19 +85,32 @@ export default function Chatbot() {
                 key={index}
                 className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
               >
-                <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
-                    message.isBot
-                      ? 'bg-white text-gray-800 border border-gray-200'
-                      : 'bg-red-600 text-white'
-                  }`}
-                >
-                  <p className="text-sm">{message.text}</p>
-                </div>
+                {message.isBot ? (
+                  // Bot message
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src="/R5.png"
+                      alt="Bot"
+                      className="w-8 h-8 rounded-full object-contain"
+                    />
+                    <div className="max-w-[70%] p-3 rounded-lg bg-white text-gray-800 border border-gray-200">
+                      <p className="text-sm">{message.text}</p>
+                    </div>
+                  </div>
+                ) : (
+                  // User message
+                  <div className="flex items-center space-x-3 flex-row-reverse">
+                    <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white text-xs font-bold ml-[5px]">
+                      YOU
+                    </div>
+                    <div className="max-w-[70%] p-3 rounded-lg bg-red-600 text-white">
+                      <p className="text-sm">{message.text}</p>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-
           <div className="p-4 border-t border-gray-200 bg-white rounded-b-lg">
             <div className="flex space-x-2">
               <input
