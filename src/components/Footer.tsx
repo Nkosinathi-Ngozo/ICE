@@ -13,7 +13,7 @@ export default function Footer() {
                 alt="Logo"
                 className="w-40 h-20 object-contain"
               /> 
-            </a>
+            </a> 
             </div>
             <p className="text-gray-400 text-sm">
               Leading in African-owned innovation by delivering excellence in IT,
