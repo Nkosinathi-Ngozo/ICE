@@ -10,7 +10,7 @@ export default function Footer() {
             <a href="#home">
               <img
                 src="/ice_logo_white.png"
-                alt="Logo"
+                alt="Logo" 
                 className="w-40 h-20 object-contain"
               /> 
             </a> 
